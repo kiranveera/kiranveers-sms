@@ -1,0 +1,51 @@
+<div class="container">
+    <div>
+        <h1 class="text-primary text-center mb-2"><marquee > WELCOME STUDENT </marquee></h1>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+           
+            <a  class="navbar-brand "  href="#" >
+              <img src="assets/logo.jpeg" alt="logo" style="width:40px;">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#a">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                  
+                  <div class="collapse navbar-collapse justify-content-end" id="a">
+            
+            <ul class="navbar-nav">
+                
+              <li class="nav-item">
+                    <a routerLink="viewmarks" class="nav-link" href="#"> VIEW MARKS  </a>
+             </li>
+               <li class="nav-item">
+                 <a routerLink="feesstatus" class="nav-link" href="#"> FEES STATUS </a>
+                 </li>
+                 <li class="nav-item">
+                  <a routerLink="attendencestatus" class="nav-link" href="#">  ATTENDANCE STATUS </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="myprofile" class="nav-link" href="#">  MY PROFILE </a>
+                    </li>
+                    <li class="nav-item">
+                      <a routerLink="notifications" class="nav-link" href="#"> NOTIFICATIONS </a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink="request" class="nav-link" href="#"> REQUEST </a>
+                        </li>
+                 <li class="nav-item">
+                    <a routerLink="logout" class="nav-link" href="#"> <img src="assets/lh.png"   style="width:25px;" > </a>
+                  </li>
+    
+             
+            </ul>
+                  </div>
+          </nav>
+          <div class="container mt-5" >
+          <router-outlet></router-outlet>
+        </div>
+          
+    </div>
+    </div>
+

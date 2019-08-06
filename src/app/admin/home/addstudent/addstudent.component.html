@@ -1,0 +1,39 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3" ></div>
+        <div class="col-md-6" >      
+    <form #ref="ngForm" (ngSubmit)="addstudent(ref.value)" >
+        
+           <div class="form-group">  
+            <label >ROLL NUMBER</label>
+               <input type="text" class="form-control round3 " id="rollnumber" placeholder=" ROLL NUMBER" name="rollnumber" ngModel #ref1="ngModel" required>
+               <label *ngIf="ref1.invalid && ref1.touched "><div class="text-danger"> *this field is mandatory </div></label>
+            </div>
+             <div class="form-group">
+            <label>STUDENT NAME</label>
+               <input type="text" class="form-control round3 " id="studentname" placeholder="NAME" name="studentname" ngModel   #ref2="ngModel" required>
+               <label *ngIf="ref2.invalid && (ref2.dirty || ref2.touched )"><div class="text-danger"> *this field is mandatory </div></label>
+             </div>
+
+             <div class="form-group">  
+                    <label> CLASS </label>
+                       <input type="text" class="form-control round3 " id="class" placeholder="CLASS " name="class" ngModel #ref3="ngModel" required>
+                       <label *ngIf="ref3.invalid && (ref3.dirty || ref3.touched )"><div class="text-danger"> *this field is mandatory </div></label>
+            </div>
+            <div class="form-group">  
+                    <label> PASSWORD </label>
+                       <input type="password" class="form-control round3 " id="password" placeholder=" PASSWORD" name="password" ngModel   #ref4="ngModel" required minlength="5">
+                       <div *ngIf="ref4.invalid && (ref4.dirty || ref4.touched)" >
+                          <div *ngIf="ref4.errors.minlength" class="text-danger">*password must be atleast 5 characters </div>
+                       </div>
+            </div>
+
+           <div class="text-center">
+             <button type="submit" class="btn btn-primary mb-3"> ADD </button>
+           </div>
+      </form>
+
+
+            
+        </div>
+        

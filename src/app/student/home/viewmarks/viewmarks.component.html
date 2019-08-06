@@ -1,0 +1,29 @@
+
+<div > 
+        <table class="table table-stripped ">
+    <thead>
+       
+        <th>
+                SUBJECT NAME
+        </th>
+        <th>
+                MARKS
+        </th>
+        <th>
+                TOTAL MARKS
+        </th>
+    </thead>
+    <tr *ngFor="let value of marks">
+        <td>
+           {{value.SUBJECTNAME}} 
+        </td>
+        <td>
+          {{value.MARKS}} 
+         </td>
+         <td>
+         {{value.TOTALMARKS}} 
+        </td>
+
+    </tr>
+</table>
+</div>

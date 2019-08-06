@@ -1,0 +1,119 @@
+<div class="container ladu ">
+    <div class="row">
+        <div class="col-md-3" ></div>
+        <div class="col-md-6" >      
+    <form #ref="ngForm" (ngSubmit)="sattendance(ref.value)" >
+           <div class="form-group">  
+            <label>ROLL NUMBER</label>
+               <input type="text" class="form-control round3 " id="rollnumber" placeholder=" ROLL NUMBER" name="rollnumber" ngModel  #ref1="ngModel" required>
+               <label *ngIf="ref1.invalid && ref1.touched "><div class="text-danger"> *this field is mandatory </div></label>
+            </div>
+             <div class="form-group">
+            <label>STUDENT NAME</label>
+               <input type="text" class="form-control round3 " id="studentname" placeholder="NAME" name="studentname" ngModel #ref2="ngModel" required>
+               <label *ngIf="ref2.invalid && (ref2.dirty || ref2.touched )"><div class="text-danger"> *this field is mandatory </div></label>
+             </div>
+             <div class="form-group">
+               <label>ATTENDANCE  MONTH</label>
+                  <input type="text" class="form-control round3 " id="attendanceformonth" placeholder="MONTH" name="attendancemonth" ngModel #ref3="ngModel" required>
+                  <label *ngIf="ref3.invalid && ref3.touched "><div class="text-danger"> *this field is mandatory </div></label>
+            </div>
+
+
+             
+             <div class="form-group">
+                <label>ATTENDANCE FOR MONTH</label>
+                   <input type="number" class="form-control round3 " id="attendanceformonth" placeholder="MONTH" name="attendanceformonth" ngModel #ref4="ngModel" required>
+                   <label *ngIf="ref4.invalid && ref4.touched "><div class="text-danger"> *this field is mandatory </div></label>
+             </div>
+             <div class="form-group">
+                <label> TOTAL ATTENDANCE</label>
+                   <input type="number" class="form-control round3 " id="totalattendance" placeholder="TOTAL ATTENDANCE" name="totalattendance" ngModel #ref5="ngModel" required>
+                   <label *ngIf="ref5.invalid && ref5.touched "><div class="text-danger"> *this field is mandatory </div></label>
+             </div>
+          
+
+           <div class="text-center">
+             <button type="submit" class="btn btn-primary mb-3"> POST </button>
+           </div>
+      </form>
+
+
+            
+        </div>
+        <div cool-md-3></div>
+   </div>
+    <!-- update operation -->
+
+
+    <div *ngIf=b3>
+      <form #ref="ngForm"  (ngSubmit)="onsubmit3(ref.value)">
+          <div>
+              <label>Change rollno</label>
+              <input type="text" name="rollnumber" class="form-control"  [(ngModel)]=objecttomodify3.rollnumber>
+          </div>
+
+          <div>
+              <label> MONTH </label>
+              <input type="text" name="attendancemonth" class="form-control"  [(ngModel)]=objecttomodify3.attendancemonth>
+          </div>
+          <div>
+              <label>ATTENDANCE </label>
+              <input type="text" name="attendanceformonth" class="form-control"  [(ngModel)]=objecttomodify3.attendanceformonth>
+          </div>
+          <div>
+              <label>TOTALATTENDANCE</label>
+              <input type="text" name="totalattendance" class="form-control" [(ngModel)]=objecttomodify3.totalattendance>
+          </div>
+          <div class="text-center"><button type="submit" class="btn btn-primary mt-3">save</button></div>
+      </form>
+  </div>
+
+    <div > 
+      <table class="table table-dark ">
+  <thead>
+     
+      <th>
+         ROLL NUMBER
+      </th>
+      <th>
+            MONTH
+      </th>
+      <th>
+            ATTENDANCE 
+      </th>
+      <th>
+         TOTALATTENDANCE
+      </th>
+  </thead>
+  <tr *ngFor="let value of x">
+      <td>
+         {{value.rollnumber}} 
+      </td>
+      <td>
+        {{value.attendancemonth}} 
+       </td>
+       <td>
+          {{value.attendanceformonth}}
+       </td>
+       <td>
+       {{value.totalattendance}} 
+      </td>
+      <td>
+            <button (click)="deletestudent(value.rollnumber)">  <a> <img src="assets/delete.png"style="width:25px;" ></a>  </button>
+     </td>
+     <td>
+      <button (click)="updateatt(value)">Edit</button> 
+   </td>
+
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+
+
+
+

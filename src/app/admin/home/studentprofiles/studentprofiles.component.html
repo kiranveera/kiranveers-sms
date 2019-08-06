@@ -1,0 +1,59 @@
+
+<div *ngIf=b4>
+    <form #ref="ngForm"  (ngSubmit)="onsubmit4(ref.value)">
+ <div>
+            <label> ROllNUMBER</label>
+            <input type="text" name="rollnumber" class="form-control" [value]="objecttomodify4.rollnumber" [(ngModel)]=objecttomodify4.rollnumber>
+        </div>
+        <div class="form-group">
+                <label>STUDENT NAME</label>
+                   <input type="text" class="form-control  " id="studentname" placeholder="NAME" name="studentname" [value]="objecttomodify4.studentname" [(ngModel)]=objecttomodify4.studentname>
+      </div>
+        <div>
+            <label>CLASS</label>
+            <input type="text" name="class" class="form-control" [value]="objecttomodify4.class" [(ngModel)]=objecttomodify4.class>
+        </div>
+        
+        <div class="text-center"><button type="submit" class="btn btn-primary mt-3">save</button></div>
+    </form>
+</div>
+<div> 
+    <table class="table table-stripped ">
+<thead>
+   
+    <th>
+        ROLL NUMBER
+    </th>
+    <th>
+        STUDENT NAME
+    </th>
+    <th>
+        CLASS
+    </th>
+    <th>
+        TO DELETE
+    </th>
+    <th>
+        TO EDIT
+    </th>
+    
+</thead>
+<tr *ngFor="let obj of data">
+    <td>
+      {{obj.rollnumber}}
+    </td>
+    <td>
+    {{obj.studentname}}
+    </td>
+    <td>
+    {{obj.class}}
+    </td>
+    <td>
+    <button (click)="deletestudent(obj.studentname)">  <a> <img src="assets/delete.png"style="width:25px;" ></a>  </button>
+   </td>
+   <td>
+    <button (click)="updateprofile(obj)"> Edit  </button>
+   </td>
+</tr>
+</table>
+</div>

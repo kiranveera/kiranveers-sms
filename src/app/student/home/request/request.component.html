@@ -1,0 +1,35 @@
+<h1 class="text-center mt-2">Request to Admin</h1>
+    <form #ref="ngForm" (ngSubmit)="leaverequest(ref.value)">
+    <div class="form-group">
+        <label><h5>request for leave :-</h5></label>
+        <textarea name="letter" id="" cols="30" rows="15" class="form-control" ngModel></textarea>
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="mt-2"><h6>from</h6></label>
+                <input type="date" name="from" class="form-control" ngModel>
+            </div>
+            <div class="col-sm-4">
+                    <label class="mt-2"><h6>To</h6></label>
+                    <input type="date" name="to" class="form-control" ngModel>
+                </div>
+                <div class="col-sm-4">
+                        <label class="mt-2"><h6>Total days</h6></label>
+                        <input type="text" name="totaldays" class="form-control" ngModel>
+                    </div>
+        </div>
+    <div class="text-center">
+    <button class="btn btn-success mt-3" type="submit">{{b?"send request":"request pending"}}</button></div>
+    </div>
+    </form>
+    <table>
+        <tr *ngFor="let acc of accept">
+             <td><h6 class="text-center text-primary">*{{acc.message}}</h6></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+

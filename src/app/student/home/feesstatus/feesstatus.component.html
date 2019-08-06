@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th>rollnumber</th>
+        <th>student name</th>
+        <th>totalfee</th>
+        <th>feepaid</th>
+        <th>feepending</th>
+    </thead>
+    <tr *ngFor="let fees of fee">
+        <td>{{fees.rollnumber}}</td>
+        <td>{{fees.studentname}}</td>
+        <td>{{fees.paidfees}}</td>
+        <td>{{fees.totalfees}}</td>
+        <td>{{fees.pendingfees}}</td>
+    </tr>
+</table>

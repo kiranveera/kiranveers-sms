@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th>ROLL NUMBER</th>
+        <th> ATTENDANCE MONTH</th>
+        <th>ATTENDANCE FOR MONTH</th>
+        <th>TOTAL ATTENDANCE</th>
+       
+    </thead>
+    <tr *ngFor="let attendance of att">
+        <td>{{attendance.rollnumber}}</td>
+        <td>{{attendance.attendancemonth}}</td>
+        <td>{{attendance.attendanceformonth}}</td>
+        <td>{{attendance.totalattendance}}</td>
+    </tr>
+</table>
+
