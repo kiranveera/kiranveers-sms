@@ -11,9 +11,10 @@ import { SendnotificationsComponent } from './home/sendnotifications/sendnotific
 import { RequestsComponent } from './home/requests/requests.component';
 import { AddstudentComponent } from './home/addstudent/addstudent.component';
 import { LogoutComponent } from './home/logout/logout.component';
+import { SearchstudentPipe } from './searchstudent.pipe';
 
 @NgModule({
-  declarations: [HomeComponent, PostmarksComponent, PostattendenceComponent, UpdatefeesComponent, StudentprofilesComponent, SendnotificationsComponent,  RequestsComponent, AddstudentComponent, LogoutComponent],
+  declarations: [HomeComponent, PostmarksComponent, PostattendenceComponent, UpdatefeesComponent, StudentprofilesComponent, SendnotificationsComponent,  RequestsComponent, AddstudentComponent, LogoutComponent, SearchstudentPipe],
   imports: [
     CommonModule,
     AdminRoutingModule,

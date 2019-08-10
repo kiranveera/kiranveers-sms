@@ -1,36 +1,38 @@
 <div class="container">
-    <div>
-        <h1 class="text-primary text-center mb-2"><MArquee> WELCOME TO SARASWATI MODEL SCHOOL </MArquee> </h1>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-           
-            <a  class="navbar-brand "  href="#" >
-              <img src="assets/logo.jpeg" alt="logo" style="width:40px;">
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#a">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                
-                  
-                  <div class="collapse navbar-collapse justify-content-end" id="a">
-            
-            <ul class="navbar-nav">
-                
-              <li class="nav-item">
-                    <a routerLink="aboutus" class="nav-link"> ABOUT US </a>
-             </li>
-               <li class="nav-item">
-                 <a routerLink="login" class="nav-link" > <img src="assets/li.png"   style="width:25px;" > LOGIN  </a>
-                 </li>
-                
-    
-             
-            </ul>
-                  </div>
-          </nav>
-          <div class="container mt-5" >
-          <router-outlet></router-outlet>
-        </div>
-          
+  <div>
+    <h1 class="text-primary text-center mb-2">
+      <MArquee> WELCOME TO SARASWATI MODEL SCHOOL </MArquee>
+    </h1>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+      <a class="navbar-brand " href="#">
+        <img src="assets/logo.jpeg" alt="logo" style="width:40px;">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#a">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse justify-content-end" id="a">
+
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a routerLink="aboutus" class="nav-link"> ABOUT US </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="login" class="nav-link"> <img src="assets/li.png" style="width:25px;"> LOGIN </a>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <router-outlet></router-outlet>
     </div>
-    </div>
+
+  </div>
+</div>

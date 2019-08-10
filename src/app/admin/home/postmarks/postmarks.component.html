@@ -1,120 +1,146 @@
 <div class="container  post ">
     <div class="row">
-        <div class="col-md-3" ></div>
-        <div class="col-md-6" >      
-    <form #ref="ngForm" (ngSubmit)="postmarks(ref.value)" class="opp"  >
-           <div class="form-group">  
-            <label>ROLL NUMBER</label>
-               <input type="text" class="form-control round3 " id="rollnumber" placeholder=" ROLL NUMBER" name="rollnumber" ngModel    #ref2="ngModel" required>
-               <label *ngIf="ref2.invalid && ref2.touched "><div class="text-danger"> *this field is mandatory </div></label>
-            </div>
-             <div class="form-group">
-            <label>STUDENT NAME</label>
-               <input type="text" class="form-control round3 " id="studentname" placeholder="NAME" name="studentname" ngModel   #ref1="ngModel" required>
-               <label *ngIf="ref1.invalid && ref1.touched "><div class="text-danger"> *this field is mandatory </div></label>
-             </div>
-
-             <div class="form-group">  
-                    <label>SUBJECT NAME </label>
-                       <input type="text" class="form-control round3 " id="SUBJECT NAME" placeholder=" SUBJECT NAME" name="SUBJECTNAME" ngModel   #ref3="ngModel" required>
-                       <label *ngIf="ref3.invalid && ref3.touched "><div class="text-danger"> *this field is mandatory </div></label>
-            </div>
-            <div class="form-group">  
-                    <label> MARKS </label>
-                       <input type="number" class="form-control round3 " id="MARKS" placeholder=" MARKS" name="MARKS" ngModel   #ref4="ngModel" required>
-                       <label *ngIf="ref4.invalid && ref4.touched "><div class="text-danger"> *this field is mandatory </div></label>
-            </div>
-            <div class="form-group">  
-                    <label> TOTAL MARKS </label>
-                    <input type="number" class="form-control round3 " id=" TOTALMARKS" placeholder=" TOTALMARKS" name="TOTALMARKS" ngModel   #ref5="ngModel" required>
-                    <label *ngIf="ref5.invalid && ref5.touched "><div class="text-danger"> *this field is mandatory </div></label>
-            </div>
-
-           <div class="text-center">
-             <button type="submit" class="btn btn-primary mb-3"> POST </button>
-           </div>
-      </form>
-<!-- update operation -->
-      <div *ngIf=b1>
-            <form #ref="ngForm"  (ngSubmit)="onsubmit1(ref.value)">
-                <div>
-                    <label>Change rollno</label>
-                    <input type="text" name="rollnumber" class="form-control" [value]="objecttomodify1.rollnumber" [(ngModel)]=objecttomodify1.rollnumber>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form #ref="ngForm" (ngSubmit)="postmarks(ref.value)" class="opp">
+                <div class="form-group">
+                    <label>ROLL NUMBER</label>
+                    <input type="text" class="form-control round3 " id="rollnumber" placeholder=" ROLL NUMBER"
+                        name="rollnumber" ngModel #ref2="ngModel" required>
+                    <label *ngIf="ref2.invalid && ref2.touched ">
+                        <div class="text-danger"> *this field is mandatory </div>
+                    </label>
                 </div>
                 <div class="form-group">
-                        <label>STUDENT NAME</label>
-                           <input type="text" class="form-control  " id="studentname" placeholder="NAME" name="studentname" [value]="objecttomodify1.studentname" [(ngModel)]=objecttomodify1.studentname>
-                         </div>
-            
-                <div>
-                    <label>Subject</label>
-                    <input type="text" name="SUBJECTNAME" class="form-control" [value]="objecttomodify1.SUBJECTNAME" [(ngModel)]=objecttomodify1.SUBJECTNAME>
+                    <label>STUDENT NAME</label>
+                    <input type="text" class="form-control round3 " id="studentname" placeholder="NAME"
+                        name="studentname" ngModel #ref1="ngModel" required>
+                    <label *ngIf="ref1.invalid && ref1.touched ">
+                        <div class="text-danger"> *this field is mandatory </div>
+                    </label>
                 </div>
-                <div>
-                    <label>Marks</label>
-                    <input type="text" name="MARKS" class="form-control" [value]="objecttomodify1.MARKS" [(ngModel)]=objecttomodify1.MARKS>
+
+                <div class="form-group">
+                    <label>SUBJECT NAME </label>
+                    <input type="text" class="form-control round3 " id="SUBJECT NAME" placeholder=" SUBJECT NAME"
+                        name="SUBJECTNAME" ngModel #ref3="ngModel" required>
+                    <label *ngIf="ref3.invalid && ref3.touched ">
+                        <div class="text-danger"> *this field is mandatory </div>
+                    </label>
                 </div>
-                <div>
-                    <label>Total Marks</label>
-                    <input type="text" name="TOTALMARKS" class="form-control" [value]="objecttomodify1.TOTALMARKS" [(ngModel)]=objecttomodify1.TOTALMARKS>
+                <div class="form-group">
+                    <label> MARKS </label>
+                    <input type="number" class="form-control round3 " id="MARKS" placeholder=" MARKS" name="MARKS"
+                        ngModel #ref4="ngModel" required>
+                    <label *ngIf="ref4.invalid && ref4.touched ">
+                        <div class="text-danger"> *this field is mandatory </div>
+                    </label>
                 </div>
-                <div class="text-center"><button type="submit" class="btn btn-primary mt-3">save</button></div>
+                <div class="form-group">
+                    <label> TOTAL MARKS </label>
+                    <input type="number" class="form-control round3 " id=" TOTALMARKS" placeholder=" TOTALMARKS"
+                        name="TOTALMARKS" ngModel #ref5="ngModel" required>
+                    <label *ngIf="ref5.invalid && ref5.touched ">
+                        <div class="text-danger"> *this field is mandatory </div>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mb-3"> POST </button>
+                </div>
             </form>
+            <!-- update operation -->
+            <div *ngIf=b1>
+                <form #ref="ngForm" (ngSubmit)="onsubmit1(ref.value)">
+                    <div>
+                        <label>Change rollno</label>
+                        <input type="text" name="rollnumber" class="form-control" [value]="objecttomodify1.rollnumber"
+                            [(ngModel)]=objecttomodify1.rollnumber>
+                    </div>
+                    <div class="form-group">
+                        <label>STUDENT NAME</label>
+                        <input type="text" class="form-control  " id="studentname" placeholder="NAME" name="studentname"
+                            [value]="objecttomodify1.studentname" [(ngModel)]=objecttomodify1.studentname>
+                    </div>
+
+                    <div>
+                        <label>Subject</label>
+                        <input type="text" name="SUBJECTNAME" class="form-control" [value]="objecttomodify1.SUBJECTNAME"
+                            [(ngModel)]=objecttomodify1.SUBJECTNAME>
+                    </div>
+                    <div>
+                        <label>Marks</label>
+                        <input type="text" name="MARKS" class="form-control" [value]="objecttomodify1.MARKS"
+                            [(ngModel)]=objecttomodify1.MARKS>
+                    </div>
+                    <div>
+                        <label>Total Marks</label>
+                        <input type="text" name="TOTALMARKS" class="form-control" [value]="objecttomodify1.TOTALMARKS"
+                            [(ngModel)]=objecttomodify1.TOTALMARKS>
+                    </div>
+                    <div class="text-center"><button type="submit" class="btn btn-primary mt-3">save</button></div>
+                </form>
+            </div>
         </div>
-    </div>
-        
-        </div>
-        <div cool-md-3></div>
 
     </div>
-    <div> 
-        <table class="table table-dark ">
-    <thead>
-        <th>
-            ROLLNUMBER
-        </th>
-        <th>
-                STUDENT NAME
-            </th>
-        <th>
-                SUBJECT NAME
-        </th>
-        <th>
-                MARKS
-        </th>
-        <th>
-                TOTAL MARKS
-        </th>
-    </thead>
-    <tr *ngFor="let value of marks">
-        
-        <td>
-            {{value.rollnumber}}
-        </td>
-        <td>
-                {{value.studentname}}
-            </td>
-        <td>
-           {{value.SUBJECTNAME}} 
-        </td>
-        <td>
-          {{value.MARKS}} 
-         </td>
-         <td>
-         {{value.TOTALMARKS}} 
-        </td>
-        <td>
-            <button (click)="deletestudent(value.rollnumber)">  <a> <img src="assets/delete.png"style="width:25px;" ></a>  </button>
-         </td>
-         <td>
-             <button (click)="updatemarks(value)">Edit</button>
-         </td>
+    <div cool-md-3></div>
 
-    </tr>
-</table>
 </div>
 
+<div>
+    <form>
+        <div class="form-group">
+            <div>
+              <input class="form-control" type="text" placeholder="search by student rollnumber" name="searchstudent"
+                [(ngModel)]="searchterm"> </div>
+          </div>
+    </form>
+</div>
+<div>
+    <table class="table table-dark ">
+        <thead>
+            <th>
+                ROLLNUMBER
+            </th>
+            <th>
+                STUDENT NAME
+            </th>
+            <th>
+                SUBJECT NAME
+            </th>
+            <th>
+                MARKS
+            </th>
+            <th>
+                TOTAL MARKS
+            </th>
+        </thead>
+        <tr *ngFor="let value of marks | searchstudent:searchterm">
 
+            <td>
+                {{value.rollnumber}}
+            </td>
+            <td>
+                {{value.studentname}}
+            </td>
+            <td>
+                {{value.SUBJECTNAME}}
+            </td>
+            <td>
+                {{value.MARKS}}
+            </td>
+            <td>
+                {{value.TOTALMARKS}}
+            </td>
+            <td>
+                <button (click)="deletestudent(value.rollnumber)"> <a> <img src="assets/delete.png"
+                            style="width:25px;"></a> </button>
+            </td>
+            <td>
+                <button (click)="updatemarks(value)">Edit</button>
+            </td>
 
-
-
+        </tr>
+    </table>
+</div>

@@ -8,17 +8,16 @@ import { MainService } from 'src/app/main.service';
 })
 export class AttendencestatusComponent implements OnInit {
 
-  constructor(private service:MainService) { }
-  att:any[]=[]
+  constructor(private service: MainService) { }
+  att: any[] = []
   user;
-  
-  ngOnInit()
-   {
-     this.user=this.service.sendLoggedUser()
-    this.service.viewSpecificAttendance(this.user).subscribe(att=>{
-      this.att=att['message']
-      console.log(this.att)
+
+  ngOnInit() {
+    this.user = this.service.sendLoggedUser()
+    this.service.viewSpecificAttendance(this.user).subscribe(att => {
+      this.att = att['message']
+     
     })
-   }
+  }
 
 }

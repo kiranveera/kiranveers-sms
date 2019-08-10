@@ -8,16 +8,15 @@ import { MainService } from 'src/app/main.service';
 })
 export class ViewmarksComponent implements OnInit {
 
-  constructor(private service:MainService) { }
-  marks:any[]=[]
+  constructor(private service: MainService) { }
+  marks: any[] = []
   user;
-  ngOnInit()
-   {
-     this.user=this.service.sendLoggedUser()
-    this.service.viewSpecificMarks(this.user).subscribe(marks=>{
-      this.marks=marks['message']
-      //console.log(this.marks)
+  ngOnInit() {
+    this.user = this.service.sendLoggedUser()
+    this.service.viewSpecificMarks(this.user).subscribe(marks => {
+      this.marks = marks['message']
+     
     })
-   }
+  }
 }
 

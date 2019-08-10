@@ -16,7 +16,7 @@ export class EditprofileComponent implements OnInit {
     this.user=this.service.sendLoggedUser()
     this.service.viewSpecificProfile(this.user).subscribe( profile=>{
       this. profile= profile['message']
-      console.log( profile)
+      
     })
   }
 

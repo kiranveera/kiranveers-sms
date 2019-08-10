@@ -8,14 +8,13 @@ import { MainService } from 'src/app/main.service';
 })
 export class NotificationsComponent implements OnInit {
 
-  constructor(private service:MainService) { }
-  notifications:any[]=[]
-  ngOnInit()
-   {
-    this.service.notifications().subscribe(notifications=>{
-      this.notifications=notifications['message']
-      console.log(notifications)
-   })
+  constructor(private service: MainService) { }
+  notifications: any[] = []
+  ngOnInit() {
+    this.service.notifications().subscribe(notifications => {
+      this.notifications = notifications['message']
+     
+    })
   }
 
 }

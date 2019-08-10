@@ -8,15 +8,14 @@ import { MainService } from 'src/app/main.service';
 })
 export class FeesstatusComponent implements OnInit {
 
-  constructor(private service:MainService) { }
-  fee:any[]=[]
+  constructor(private service: MainService) { }
+  fee: any[] = []
   user
-  ngOnInit()
-   {
-    this.user=this.service.sendLoggedUser()
-    this.service.viewSpecificFees(this.user).subscribe(fee=>{
-      this.fee=fee['message']
-      console.log(fee)
+  ngOnInit() {
+    this.user = this.service.sendLoggedUser()
+    this.service.viewSpecificFees(this.user).subscribe(fee => {
+      this.fee = fee['message']
+     
     })
   }
 

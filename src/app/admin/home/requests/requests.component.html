@@ -1,23 +1,30 @@
 <div class="row">
     <div class="col-sm-12">
-<ul *ngFor="let value of data">
-    <pre style=" display: flex"><li class="nav-link">{{value.letter}}</li></pre>
-    <div class="row">
-        <div class="col-md-4"><li class="nav-link"><b>from</b>: {{value.from}}</li></div>
-        <div class="col-md-4"><li class="nav-link"><b>to</b>: {{value.to}}</li></div>
-        <div class="col-md-4"><li class="nav-link"><b>totaldays: </b>{{value.totaldays}}</li></div>
+        <ul *ngFor="let value of data">
+            <pre style=" display: flex"><li class="nav-link">{{value.letter}}</li></pre>
+            <div class="row">
+                <div class="col-md-4">
+                    <li class="nav-link"><b>from</b>: {{value.from}}</li>
+                </div>
+                <div class="col-md-4">
+                    <li class="nav-link"><b>to</b>: {{value.to}}</li>
+                </div>
+                <div class="col-md-4">
+                    <li class="nav-link"><b>totaldays: </b>{{value.totaldays}}</li>
+                </div>
+            </div>
+            <div class="text-center"><button class="btn btn-primary mr-2"
+                    (click)="accept(value.rollnumber)">accept</button>
+                <button class="btn btn-danger" (click)="reject(value.rollnumber)">reject</button></div>
+        </ul>
     </div>
-    <div class="text-center"><button class="btn btn-primary mr-2" (click)="accept(value.rollnumber)">accept</button>
-        <button class="btn btn-danger" (click)="reject(value.rollnumber)">reject</button></div>
-</ul>
 </div>
-</div>
-    <div *ngIf=b>
-        <form #ref="ngForm" (ngSubmit)="rejectreason(ref.value)">
+<div *ngIf=b>
+    <form #ref="ngForm" (ngSubmit)="rejectreason(ref.value)">
         <div class="form-group mt-2">
             <input type="text" #ref class="form-control" name="responce" ngModel>
             <div class="text-center">
-            <button class="btn btn-success mt-3" type="submit">send</button></div>
-            </div>
-        </form>
-    </div>
+                <button class="btn btn-success mt-3" type="submit">send</button></div>
+        </div>
+    </form>
+</div>

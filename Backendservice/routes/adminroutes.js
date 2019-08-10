@@ -142,7 +142,7 @@ else
 //post notification
 adminroutes.post('/noti',(req,res)=>{
     dbo=getDb()
-    console.log(req.body);
+   
     if(req.body=={})
     {
         res.json({"message":"server didn't recieve data"})
@@ -199,7 +199,7 @@ adminroutes.delete('/deletefees/:rollnumber',(req,res,next)=>
             }
             else
             {
-                console.log(success)
+                
                 dbo.collection("updatefeesdetailcollection").find().toArray((err,dataArray)=>
             {
               if(err)
@@ -208,7 +208,7 @@ adminroutes.delete('/deletefees/:rollnumber',(req,res,next)=>
                       }
               else 
                       {
-                          console.log(dataArray);
+                          
                          res.json({"message":"Record deleted",
                                          data:dataArray  })
                       }
@@ -230,7 +230,7 @@ adminroutes.delete('/deletefees/:rollnumber',(req,res,next)=>
 //post fees status
 adminroutes.post('/fees',(req,res)=>{
     dbo=getDb()
-    console.log(req.body);
+   
     if(req.body=={})
     {
         res.json({"message":"server didn't recieve data"})
@@ -284,7 +284,7 @@ adminroutes.delete('/deletemarks/:rollnumber',(req,res,next)=>
             }
             else
             {
-                console.log(success)
+                
                 dbo.collection("postmarkscollection").find().toArray((err,dataArray)=>
             {
               if(err)
@@ -293,7 +293,7 @@ adminroutes.delete('/deletemarks/:rollnumber',(req,res,next)=>
                       }
               else 
                       {
-                          console.log(dataArray);
+                          
                          res.json({"message":"Record deleted",
                                          data:dataArray  })
                       }
@@ -306,7 +306,7 @@ adminroutes.delete('/deletemarks/:rollnumber',(req,res,next)=>
 
 //post marks
 adminroutes.post('/marks',(req,res)=>{
-    console.log(req.body);
+   
     dbo=getDb()
     
     if(req.body=={})
@@ -373,7 +373,7 @@ adminroutes.delete('/deleteattendance/:rollnumber',(req,res,next)=>
             }
             else
             {
-                console.log(success)
+                
                 dbo.collection("postattendencecollection").find().toArray((err,dataArray)=>
             {
               if(err)
@@ -382,7 +382,7 @@ adminroutes.delete('/deleteattendance/:rollnumber',(req,res,next)=>
                       }
               else 
                       {
-                          console.log(dataArray);
+                          
                          res.json({"message":"Record deleted",
                                          data:dataArray  })
                       }
@@ -397,7 +397,7 @@ adminroutes.delete('/deleteattendance/:rollnumber',(req,res,next)=>
 // post attendance
 adminroutes.post('/attendance',(req,res)=>{
     dbo=getDb()
-    console.log(req.body);
+   
     if(req.body=={})
     {
         res.json({"message":"server didn't recieve data"})

@@ -37,7 +37,7 @@ objecttomodify1:object;
 //delete operation
   deletestudent(rollnumber)
   {
-    console.log(rollnumber)
+    
     
     this.httpclient.delete(`/admin/deletemarks/${rollnumber}`).subscribe((res)=>
     {
@@ -50,7 +50,7 @@ objecttomodify1:object;
   updatemarks(marks)
 {
   this.objecttomodify1=marks;
-  console.log(this.objecttomodify1)
+ 
   this.b1=true
 }
 onsubmit1(modifyobject)
