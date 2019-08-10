@@ -11,6 +11,7 @@ export class PostmarksComponent implements OnInit {
 marks:any[]=[];
 b1:boolean=false;
 objecttomodify1:object;
+search:any;
   constructor(private service:MainService ,private httpclient:HttpClient) { }
 
   ngOnInit()

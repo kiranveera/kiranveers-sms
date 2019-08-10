@@ -13,6 +13,7 @@ export class UpdatefeesComponent implements OnInit {
   constructor(private service:MainService ,private httpclient:HttpClient) { }
   x:any[];
   b2:boolean=false;
+  search:any;
 objecttomodify2:object;
     ngOnInit() 
     {

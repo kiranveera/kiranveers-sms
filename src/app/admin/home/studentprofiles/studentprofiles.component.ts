@@ -12,6 +12,7 @@ export class StudentprofilesComponent implements OnInit {
   constructor(private service: MainService, private http: HttpClient) { }
   data: any[] = []
   b4: boolean = false;
+  search:any;
   objecttomodify4: object;
   ngOnInit() {
     this.service.readdata().subscribe(data => {

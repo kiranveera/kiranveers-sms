@@ -12,6 +12,7 @@ export class PostattendenceComponent implements OnInit {
   constructor(private service: MainService, private httpclient: HttpClient) { }
   x: any[] = []
   b3: boolean = false;
+  search:any;
   objecttomodify3: object;
   ngOnInit() {
     this.service.viewattendance().subscribe(x => {
