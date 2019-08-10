@@ -12,6 +12,7 @@ export class RequestsComponent implements OnInit {
   constructor(private service: MainService, private http: HttpClient) { }
   c: any
   d: any
+  b: any
   data: any[] = []
   loggedUser;
   ngOnInit() {
