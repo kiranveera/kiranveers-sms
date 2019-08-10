@@ -5,13 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchstudentPipe implements PipeTransform {
 
-  transform(data: any[], searchterm: any): any {
-    if (!searchterm) {
+  transform(data: any[], search: any): any {
+    if (!search) {
       return data;
 
     }
     else {
-      return data.filter(data => data.rollnumber.toLowerCase().indexOf(searchterm.toLowerCase()) !== -1)
+      return data.filter(data => data.rollnumber.toLowerCase().indexOf(search.toLowerCase()) !== -1)
     }
 
 

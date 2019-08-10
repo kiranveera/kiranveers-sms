@@ -5,7 +5,7 @@
             <div class="col-md-1">
     <label>Search</label></div>
     <div class="col-md-11">
-    <input  class="form-control" type="text" placeholder="search by student rollnumber" name="searchstudent" [(ngModel)]="searchterm">    </div>
+    <input  class="form-control" type="text" placeholder="search by student rollnumber" name="searchstudent" [(ngModel)]="search">    </div>
 </div>
         </div>
 </form>
@@ -53,7 +53,7 @@
             </th>
 
         </thead>
-        <tr *ngFor="let obj of data | searchstudent:searchterm">
+        <tr *ngFor="let obj of data | searchstudent:search">
             <td>
                 {{obj.rollnumber}}
             </td>

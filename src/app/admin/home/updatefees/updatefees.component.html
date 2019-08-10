@@ -92,7 +92,7 @@
       <div class="form-group">
          <div>
            <input class="form-control" type="text" placeholder="search by student rollnumber" name="searchstudent"
-             [(ngModel)]="searchterm"> </div>
+             [(ngModel)]="search"> </div>
        </div>
    </form>
 </div>
@@ -115,7 +115,7 @@
                PENDING FEES
             </th>
          </thead>
-         <tr *ngFor="let value of x | searchstudent:searchterm">
+         <tr *ngFor="let value of x | searchstudent:search">
             <td>
                {{value.rollnumber}}
             </td>
