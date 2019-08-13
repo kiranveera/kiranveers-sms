@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/main.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private service:MainService) { }
+user:any[]=[];
   ngOnInit() {
-  }
 
-}
+  //   this.user=this.service.sendLoggedUser()[0].studentname
+  //   this.service.viewSpecificProfile(this.user).subscribe( profile=>{
+  //     // this.profile= profile['message']
+  //   console.log(this.user)
+
+    
+  // })
+
+  // }
+}}

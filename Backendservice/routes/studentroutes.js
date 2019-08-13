@@ -4,11 +4,13 @@ const bodyparser=require('body-parser')
 studentroutes.use(bodyparser.json())
 const initDb=require('../DBconfig').initDb
 const getDb=require('../DBconfig').getDb
+const   secretkey="secret"
+const Authorization=require('../middleware/authorization')
 initDb()
 
 //get specific profile
 
-studentroutes.post('/viewspecificprofile',(req,res)=>{
+studentroutes.post('/viewspecificprofile',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("addstudentscollection").find({rollnumber:{$eq:req.body.rollnumber}}).toArray((err,dataArray)=>
     {
@@ -30,7 +32,7 @@ studentroutes.post('/viewspecificprofile',(req,res)=>{
 
 //get profiles
 
-studentroutes.get('/readdata',(req,res)=>{
+studentroutes.get('/readdata',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("addstudentscollection").find().toArray((err,dataArray)=>
     {
@@ -55,7 +57,7 @@ studentroutes.get('/readdata',(req,res)=>{
 
 //get specific attendance 
 
-studentroutes.post('/viewspecificattendance',(req,res)=>{
+studentroutes.post('/viewspecificattendance',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("postattendencecollection").find({rollnumber:{$eq:req.body.rollnumber}}).toArray((err,dataArray)=>
     {
@@ -77,7 +79,7 @@ studentroutes.post('/viewspecificattendance',(req,res)=>{
 
 //get attendance 
 
-studentroutes.get('/viewattendance',(req,res)=>{
+studentroutes.get('/viewattendance',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("postattendencecollection").find().toArray((err,dataArray)=>
     {
@@ -98,7 +100,7 @@ studentroutes.get('/viewattendance',(req,res)=>{
  })
  // get specific marks
  
-studentroutes.post('/viewspecificmarks',(req,res)=>{
+studentroutes.post('/viewspecificmarks',Authorization,(req,res)=>{
     dbo=getDb()
     console.log(req.body)
     dbo.collection("postmarkscollection").find({rollnumber:{$eq:req.body.rollnumber}}).toArray((err,dataArray)=>
@@ -120,7 +122,7 @@ studentroutes.post('/viewspecificmarks',(req,res)=>{
  })
 
  //get all marks
- studentroutes.get('/viewmarks',(req,res)=>{
+ studentroutes.get('/viewmarks',Authorization,(req,res)=>{
     dbo=getDb()
     console.log(req.body)
     dbo.collection("postmarkscollection").find().toArray((err,dataArray)=>
@@ -143,7 +145,7 @@ studentroutes.post('/viewspecificmarks',(req,res)=>{
 
 //get specific fees
 
-studentroutes.post('/viewspecficfees',(req,res)=>{
+studentroutes.post('/viewspecficfees',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("updatefeesdetailcollection").find({rollnumber:{$eq:req.body.rollnumber}}).toArray((err,dataArray)=>
     {
@@ -166,7 +168,7 @@ studentroutes.post('/viewspecficfees',(req,res)=>{
 
  //fees status
  
-studentroutes.get('/feesstatus',(req,res)=>{
+studentroutes.get('/feesstatus',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("updatefeesdetailcollection").find().toArray((err,dataArray)=>
     {
@@ -186,7 +188,7 @@ studentroutes.get('/feesstatus',(req,res)=>{
     })
  })
 //Get attandance
-studentroutes.get('/notifications',(req,res)=>{
+studentroutes.get('/notifications',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("sendnotificationscollection").find().toArray((err,dataArray)=>
     {
@@ -207,7 +209,7 @@ studentroutes.get('/notifications',(req,res)=>{
  })
  
 // send leave request
-studentroutes.post('/viewspecificrequest',(req,res,next)=>
+studentroutes.post('/viewspecificrequest',Authorization,(req,res,next)=>
 {
   dbo=getDb()
   dbo.collection('leaveresponcecollection').find({rollnumber:{$eq:req.body.rollnumber}}).toArray((err,dataArray)=>{

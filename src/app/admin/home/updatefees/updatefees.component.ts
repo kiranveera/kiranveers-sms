@@ -19,6 +19,10 @@ objecttomodify2:object;
     {
 
       this.service.feesstatus().subscribe(x=>{
+        if (x['message']=='unauthorized access')
+    {
+      alert(['unauthorized access'])
+    }
         this.x=x['message']
       
       })

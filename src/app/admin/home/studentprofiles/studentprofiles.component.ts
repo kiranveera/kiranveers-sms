@@ -16,6 +16,10 @@ export class StudentprofilesComponent implements OnInit {
   objecttomodify4: object;
   ngOnInit() {
     this.service.readdata().subscribe(data => {
+      if (data['message']=='unauthorized access')
+    {
+      alert(['unauthorized access'])
+    }
       this.data = data['message']
     })
   }

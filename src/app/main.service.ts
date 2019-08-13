@@ -22,7 +22,7 @@ user;
   constructor(private http:HttpClient) { }
   studentmarks(b)
   {
-    console.log(b);
+    
     this.a=b
   }
   sendmarkstostudent()
@@ -39,7 +39,7 @@ user;
  }
   sendtoservice(f)
  {
-  console.log(f)
+ 
    this.e=f
 }
 
@@ -50,7 +50,7 @@ studentfee()
 sendnotificationtoservice(h)
 {
   this.g=h
-  console.log(this.g)
+  
 }
 sendnotificationtonotification()
 {
@@ -59,7 +59,7 @@ sendnotificationtonotification()
 sendrequest(j)
 {
 this.k=j
-console.log(this.k)
+
 }
 requests()
 {
@@ -113,14 +113,14 @@ notifications():Observable <any[]>
 }
 
 loggedUser(user){
-  console.log(user)
+  
   this.user=user[0]
 }
 sendLoggedUser(){
   return this.user;
 }
 viewSpecificMarks(user){
-  console.log(user)
+  
   return this.http.post<any[]>('student/viewspecificmarks',user)
 }
 viewSpecificAttendance(user){

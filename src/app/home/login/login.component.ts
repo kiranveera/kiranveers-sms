@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       else if (res["message"]==="admin success"){
         alert("login successfully")
           localStorage.setItem("idtoken",res['token'])
-          this.router.navigate(["/admin"])
+          this.router.navigate(["/admin/studentprofiles"])
       }
     })
     }
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
           alert("login successfully")
           localStorage.setItem("idtoken",res['token'])
           this.mainService.loggedUser(res['data'])
-          this.router.navigate(["/student"])
+          this.router.navigate(["/student/myprofile"])
         }
       })
       

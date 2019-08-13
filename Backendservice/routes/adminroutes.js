@@ -19,13 +19,13 @@ adminroutes.post('/adminlogin',(req,res,next)=>{
             res.json({message:"Invalid admin password"})
         }
         else{
-            const signedToken=jwt.sign({rollno:userArray[0].rollnumber},secretkey,{expiresIn:"50000"})
+            const signedToken=jwt.sign({rollno:userArray[0].rollnumber},secretkey,{expiresIn:"7d"})
             res.json({message:"admin success",token:signedToken})
         }
     })
 })
 // update profiles
-adminroutes.put('/updateprofile',(req,res,next)=>{
+adminroutes.put('/updateprofile',Authorization,(req,res,next)=>{
     console.log(req.body)
     dbo=getDb()
    
@@ -44,7 +44,7 @@ adminroutes.put('/updateprofile',(req,res,next)=>{
 
 
 //delete student
-adminroutes.delete('/delete/:name',(req,res,next)=>
+adminroutes.delete('/delete/:name',Authorization,(req,res,next)=>
     {
         console.log(req.params);
        //delete student profile with name as " req .params.name"
@@ -77,7 +77,7 @@ adminroutes.delete('/delete/:name',(req,res,next)=>
 
 // admin student profiles
 initDb()
-adminroutes.get('/read',(req,res)=>{
+adminroutes.get('/read',Authorization,(req,res)=>{
     dbo=getDb()
     dbo.collection("addstudentscollection").find().toArray((err,dataArray)=>
     {
@@ -140,7 +140,7 @@ else
 
 
 //post notification
-adminroutes.post('/noti',(req,res)=>{
+adminroutes.post('/noti',Authorization,(req,res)=>{
     dbo=getDb()
    
     if(req.body=={})
@@ -157,7 +157,7 @@ adminroutes.post('/noti',(req,res)=>{
             }
             else
             {
-                res.json({message:"successfully inserted"})
+                res.json({message:" notification send successfully"})
             }
         })
     }
@@ -166,7 +166,7 @@ adminroutes.post('/noti',(req,res)=>{
 
 
 // update fees
-adminroutes.put('/updatefees',(req,res,next)=>{
+adminroutes.put('/updatefees',Authorization,(req,res,next)=>{
     console.log(req.body)
     dbo=getDb()
     dbo.collection("updatefeesdetailcollection").update({rollnumber:{$eq:req.body.rollnumber}},{$set:{rollnumber:req.body.rollnumber,
@@ -184,7 +184,7 @@ adminroutes.put('/updatefees',(req,res,next)=>{
 
 // delete fees
 
-adminroutes.delete('/deletefees/:rollnumber',(req,res,next)=>
+adminroutes.delete('/deletefees/:rollnumber',Authorization,(req,res,next)=>
     {
         
         
@@ -228,7 +228,7 @@ adminroutes.delete('/deletefees/:rollnumber',(req,res,next)=>
 
 
 //post fees status
-adminroutes.post('/fees',(req,res)=>{
+adminroutes.post('/fees',Authorization,(req,res)=>{
     dbo=getDb()
    
     if(req.body=={})
@@ -245,13 +245,13 @@ adminroutes.post('/fees',(req,res)=>{
             }
             else
             {
-                res.json({message:"successfully inserted"})
+                res.json({message:"successfully posted fees status"})
             }
         })
     }
 })
 // update marks
-adminroutes.put('/updatemarks',(req,res,next)=>{
+adminroutes.put('/updatemarks',Authorization,(req,res,next)=>{
     console.log(req.body)
     dbo=getDb()
     dbo.collection("postmarkscollection").update({rollnumber:{$eq:req.body.rollnumber}},{$set:{rollnumber:req.body.rollnumber,
@@ -268,7 +268,7 @@ adminroutes.put('/updatemarks',(req,res,next)=>{
 
 // delete marks
 
-adminroutes.delete('/deletemarks/:rollnumber',(req,res,next)=>
+adminroutes.delete('/deletemarks/:rollnumber',Authorization,(req,res,next)=>
     {
         
        
@@ -305,7 +305,7 @@ adminroutes.delete('/deletemarks/:rollnumber',(req,res,next)=>
     })
 
 //post marks
-adminroutes.post('/marks',(req,res)=>{
+adminroutes.post('/marks',Authorization,(req,res)=>{
    
     dbo=getDb()
     
@@ -331,7 +331,7 @@ adminroutes.post('/marks',(req,res)=>{
                     }
                     else
                     {
-                        res.json({message:"successfully inserted",
+                        res.json({message:"successfully posted marks",
                                     data:result
                     })
                     }
@@ -341,7 +341,7 @@ adminroutes.post('/marks',(req,res)=>{
     }
 })
 // update attendance
-adminroutes.put('/updateatt',(req,res,next)=>{
+adminroutes.put('/updateatt',Authorization,(req,res,next)=>{
     console.log(req.body)
     dbo=getDb()
     dbo.collection("postattendencecollection").update({rollnumber:{$eq:req.body.rollnumber}},{$set:{rollnumber:req.body.rollnumber,
@@ -358,7 +358,7 @@ adminroutes.put('/updateatt',(req,res,next)=>{
   })
 // delete attendance
 
-adminroutes.delete('/deleteattendance/:rollnumber',(req,res,next)=>
+adminroutes.delete('/deleteattendance/:rollnumber',Authorization,(req,res,next)=>
     {
         
         
@@ -395,7 +395,7 @@ adminroutes.delete('/deleteattendance/:rollnumber',(req,res,next)=>
 
 
 // post attendance
-adminroutes.post('/attendance',(req,res)=>{
+adminroutes.post('/attendance',Authorization,(req,res)=>{
     dbo=getDb()
    
     if(req.body=={})
@@ -412,7 +412,7 @@ adminroutes.post('/attendance',(req,res)=>{
             }
             else
             {
-                res.json({message:"successfully inserted"})
+                res.json({message:"successfully posted attendance "})
             }
         })
     }
@@ -438,7 +438,7 @@ adminroutes.post('/login',(req,res,next)=>{
         {
             if(result==true)
             {
-                const signedToken=jwt.sign({rollno:userArray[0].rollnumber},secretkey,{expiresIn:"20000"})
+                const signedToken=jwt.sign({rollno:userArray[0].rollnumber},secretkey,{expiresIn:"7d"})
               res.json({message:"success",token:signedToken, data:userArray});
             }
   

@@ -17,6 +17,10 @@ search:any;
   ngOnInit()
  {
   this.service.viewmarks().subscribe(marks=>{
+    if (marks['message']=='unauthorized access')
+    {
+      alert(['unauthorized access'])
+    }
     this.marks=marks['message']
     
   })

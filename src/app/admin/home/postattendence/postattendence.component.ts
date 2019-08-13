@@ -16,6 +16,10 @@ export class PostattendenceComponent implements OnInit {
   objecttomodify3: object;
   ngOnInit() {
     this.service.viewattendance().subscribe(x => {
+      if (x['message']=='unauthorized access')
+    {
+      alert(['unauthorized access'])
+    }
       this.x = x['message']
 
     })
