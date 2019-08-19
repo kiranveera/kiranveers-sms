@@ -17,6 +17,10 @@ export class RequestComponent implements OnInit {
   ngOnInit() {
     this.user = this.service.sendLoggedUser()
     this.service.viewSpecificrequest(this.user).subscribe(accept => {
+      if (accept['message']=='unauthorized access')
+      {
+        alert(['unauthorized access'])
+      }
       this.accept = accept['message']
     })
   }

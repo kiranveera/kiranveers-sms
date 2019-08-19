@@ -9,7 +9,7 @@
                <input type="text" class="form-control round3 " id="rollnumber" placeholder=" ROLL NUMBER"
                   name="rollnumber" ngModel #ref1="ngModel" required>
                <label *ngIf="ref1.invalid && ref1.touched ">
-                  <div class="text-danger"> *this field is mandatory </div>
+                  <div class="text-danger"> *rollnumber field is mandatory </div>
                </label>
             </div>
             <div class="form-group">
@@ -17,7 +17,7 @@
                <input type="text" class="form-control round3 " id="studentname" placeholder="NAME" name="studentname"
                   ngModel #ref2="ngModel" required>
                <label *ngIf="ref2.invalid && (ref2.dirty || ref2.touched )">
-                  <div class="text-danger"> *this field is mandatory </div>
+                  <div class="text-danger"> *studentname field is mandatory </div>
                </label>
             </div>
 
@@ -26,7 +26,23 @@
                <input type="text" class="form-control round3 " id="class" placeholder="CLASS " name="class" ngModel
                   #ref3="ngModel" required>
                <label *ngIf="ref3.invalid && (ref3.dirty || ref3.touched )">
-                  <div class="text-danger"> *this field is mandatory </div>
+                  <div class="text-danger"> *class field is mandatory </div>
+               </label>
+            </div>
+            <div class="form-group">
+               <label> GMAIL  </label>
+               <input type="email" class="form-control round3 " id="gmail" placeholder="Gmail address " name="gmail" ngModel
+                  #ref5="ngModel" required>
+               <label *ngIf="ref3.invalid && (ref5.dirty || ref5.touched )">
+                  <div class="text-danger"> *gmail field is mandatory </div>
+               </label>
+            </div>
+            <div class="form-group">
+               <label> MOBILE NUMBER  </label>
+               <input type="number" class="form-control round3 " id="phnumber" placeholder="MOBILE NUMBER " name="phnumber" ngModel
+                  #ref6="ngModel" required>
+               <label *ngIf="ref3.invalid && (ref6.dirty || ref6.touched )">
+                  <div class="text-danger"> *mobilenumber field is mandatory </div>
                </label>
             </div>
             <div class="form-group">
@@ -42,7 +58,4 @@
                <button type="submit" class="btn btn-primary mb-3"> ADD </button>
             </div>
          </form>
-
-
-
       </div>

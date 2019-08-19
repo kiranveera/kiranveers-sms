@@ -13,7 +13,7 @@ export class AddstudentComponent implements OnInit {
 
 
   addstudent(a) {
-    if (a.rollno == "" || a.studentname == "" || a.class == "" || a.password == "") {
+    if (a.rollno == "" || a.studentname == "" || a.class == "" || a.password == "" || a.gmail == "" || a.phnumber== "") {
       alert("fill the all fields with valid information")
     }
     else {

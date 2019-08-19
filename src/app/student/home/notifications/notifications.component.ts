@@ -12,6 +12,10 @@ export class NotificationsComponent implements OnInit {
   notifications: any[] = []
   ngOnInit() {
     this.service.notifications().subscribe(notifications => {
+      if (notifications['message']=='unauthorized access')
+      {
+        alert(['unauthorized access'])
+      }
       this.notifications = notifications['message']
      
     })

@@ -107,8 +107,7 @@ studentroutes.post('/viewspecificmarks',Authorization,(req,res)=>{
     {
         if(err)
         {
-         
-         console.log(err)
+        console.log(err)
         } else if(dataArray.length==0)
         {
        res.json({"message":"no data found"})

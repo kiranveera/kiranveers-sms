@@ -11,14 +11,19 @@ import { LoginComponent } from './home/login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthorizationService } from './authorization.service';
 
+import { ChangepasswordComponent } from './home/login/changepassword/changepassword.component';
+import { OtpComponent } from './home/login/otp/otp.component';
+import { ForgotpasswordComponent } from './home/login/forgotpassword/forgotpassword.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutusComponent,
-    
-   
-    LoginComponent
+    LoginComponent, 
+    ChangepasswordComponent,
+    OtpComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

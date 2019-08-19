@@ -15,6 +15,10 @@ export class AttendencestatusComponent implements OnInit {
   ngOnInit() {
     this.user = this.service.sendLoggedUser()
     this.service.viewSpecificAttendance(this.user).subscribe(att => {
+      if (att['message']=='unauthorized access')
+      {
+        alert(['unauthorized access'])
+      }
       this.att = att['message']
      
     })

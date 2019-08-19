@@ -14,6 +14,10 @@ export class FeesstatusComponent implements OnInit {
   ngOnInit() {
     this.user = this.service.sendLoggedUser()
     this.service.viewSpecificFees(this.user).subscribe(fee => {
+      if (fee['message']=='unauthorized access')
+      {
+        alert(['unauthorized access'])
+      }
       this.fee = fee['message']
      
     })

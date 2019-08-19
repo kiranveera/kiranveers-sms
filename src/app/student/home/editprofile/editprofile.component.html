@@ -15,15 +15,20 @@
      -->
 <div class="text-center profile">
     <ul *ngFor="let student of profile">
-        <li class="nav-link"><b>ROLLNUMBER</b>
-            <h2>{{student.rollnumber}}</h2>
+        <li class="nav-link"><h3><b>ROLLNUMBER</b></h3>
+            <h3>{{student.rollnumber}}</h3>
         </li>
-        <li class="nav-link"><b>STUDENT NAME</b>
-            <h2>{{student.studentname}}</h2>
+        <li class="nav-link"> <h3><b>STUDENT NAME</b></h3>
+            <h3>{{student.studentname}}</h3>
         </li>
-        <li class="nav-link"><b>CLASS</b>
-            <h2>{{student.class}}</h2>
+        <li class="nav-link"><h3><b>CLASS</b></h3>
+            <h3>{{student.class}}</h3>
         </li>
-
-    </ul>
+        <li class="nav-link"><h3><b>GMAIL</b></h3>
+            <h3>{{student.gmail}}</h3>
+        </li>
+        <li class="nav-link"><h3><b>MOBILE NUMBER</b></h3>
+            <h3>{{student.phnumber}}</h3>
+        </li>
+  </ul>
 </div>

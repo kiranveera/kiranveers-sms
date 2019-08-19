@@ -14,6 +14,10 @@ export class ViewmarksComponent implements OnInit {
   ngOnInit() {
     this.user = this.service.sendLoggedUser()
     this.service.viewSpecificMarks(this.user).subscribe(marks => {
+      if (marks['message']=='unauthorized access')
+      {
+        alert(['unauthorized access'])
+      }
       this.marks = marks['message']
      
     })

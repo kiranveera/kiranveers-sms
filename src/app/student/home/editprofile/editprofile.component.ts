@@ -15,6 +15,10 @@ export class EditprofileComponent implements OnInit {
 
     this.user=this.service.sendLoggedUser()
     this.service.viewSpecificProfile(this.user).subscribe( profile=>{
+      if (profile['message']=='unauthorized access')
+      {
+        alert(['unauthorized access'])
+      }
       this. profile= profile['message']
       
     })

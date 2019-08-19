@@ -8,7 +8,7 @@
           <input type="text" class="form-control round3 " id="rollnumber" placeholder=" ROLL NUMBER" name="rollnumber"
             ngModel #ref1="ngModel" required>
           <label *ngIf="ref1.invalid && ref1.touched ">
-            <div class="text-danger"> *this field is mandatory </div>
+            <div class="text-danger"> *rollnumber field is mandatory </div>
           </label>
         </div>
         <div class="form-group">
@@ -16,7 +16,7 @@
           <input type="text" class="form-control round3 " id="studentname" placeholder="NAME" name="studentname" ngModel
             #ref2="ngModel" required>
           <label *ngIf="ref2.invalid && (ref2.dirty || ref2.touched )">
-            <div class="text-danger"> *this field is mandatory </div>
+            <div class="text-danger"> *studentname field is mandatory </div>
           </label>
         </div>
         <div class="form-group">
@@ -24,7 +24,7 @@
           <input type="text" class="form-control round3 " id="attendanceformonth" placeholder="MONTH"
             name="attendancemonth" ngModel #ref3="ngModel" required>
           <label *ngIf="ref3.invalid && ref3.touched ">
-            <div class="text-danger"> *this field is mandatory </div>
+            <div class="text-danger"> *attendancemonth field is mandatory </div>
           </label>
         </div>
         <div class="form-group">
@@ -32,7 +32,7 @@
           <input type="number" class="form-control round3 " id="attendanceformonth" placeholder="MONTH"
             name="attendanceformonth" ngModel #ref4="ngModel" required>
           <label *ngIf="ref4.invalid && ref4.touched ">
-            <div class="text-danger"> *this field is mandatory </div>
+            <div class="text-danger"> *attendanceformonth field is mandatory </div>
           </label>
         </div>
         <div class="form-group">
@@ -40,7 +40,7 @@
           <input type="number" class="form-control round3 " id="totalattendance" placeholder="TOTAL ATTENDANCE"
             name="totalattendance" ngModel #ref5="ngModel" required>
           <label *ngIf="ref5.invalid && ref5.touched ">
-            <div class="text-danger"> *this field is mandatory </div>
+            <div class="text-danger"> *totalattendance field is mandatory </div>
           </label>
         </div>
 
@@ -122,13 +122,12 @@
         <td>
           {{value.totalattendance}}
         </td>
-        <td>
+        
           <button (click)="deletestudent(value.rollnumber)"> <a> <img src="assets/delete.png" style="width:25px;"></a>
           </button>
-        </td>
-        <td>
+        
           <button (click)="updateatt(value)"><a> <img src="assets/edit.png" style="width:25px;"></a></button>
-        </td>
+        
 
       </tr>
     </table>

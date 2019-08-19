@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-sm-12">
         <ul *ngFor="let value of data">
+                <li class="nav-link"><b>ROLLNUMBER</b>: {{value.rollnumber}}</li>
             <pre style=" display: flex"><li class="nav-link">{{value.letter}}</li></pre>
             <div class="row">
                 <div class="col-md-4">
@@ -15,16 +16,18 @@
             </div>
             <div class="text-center"><button class="btn btn-primary mr-2"
                     (click)="accept(value.rollnumber)">accept</button>
-                <button class="btn btn-danger" (click)="reject(value.rollnumber)">reject</button></div>
-        </ul>
+                    <button class="btn btn-danger" (click)="reject()">reject</button></div>
+                    <div *ngIf=b>
+                        <form #ref="ngForm" (ngSubmit)="rejectreason((ref.value),(value.rollnumber))">
+                            <div class="form-group mt-2">
+                                <input type="text"  class="form-control" name="responce" ngModel>
+                                <div class="text-center">
+                                    <button class="btn btn-success mt-3" type="submit">send</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </ul>
+
     </div>
 </div>
-<div *ngIf=b>
-    <form #ref="ngForm" (ngSubmit)="rejectreason(ref.value)">
-        <div class="form-group mt-2">
-            <input type="text" #ref class="form-control" name="responce" ngModel>
-            <div class="text-center">
-                <button class="btn btn-success mt-3" type="submit">send</button></div>
-        </div>
-    </form>
-</div>
+

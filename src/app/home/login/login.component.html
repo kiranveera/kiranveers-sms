@@ -13,7 +13,7 @@
                 <div class="card-body">
                   <h2 class=" text-center"> Log In</h2>
                   <label *ngIf="ref1.invalid && (ref1.dirty || ref1.untouched )">
-                      <div class="text-danger"> *this field is mandatory </div>
+                      <div class="text-danger"> *select user  </div>
                     </label>
                 
                   <div class=" row">
@@ -23,8 +23,8 @@
                       <div class="form-check">
                      
                         <input style="width:20px; height:20px;" type="radio" class="form-check-input" value="admin"
-                          id="a" name="user"  ngModel #ref1="ngModel" required>
-                        <label class="form-check-lable" for="a">
+                          id="z" name="user"  ngModel #ref1="ngModel" required>
+                        <label class="form-check-lable" for="z">
                           <h4 style="padding-left: 20px;padding-top: 3px; ">ADMIN </h4>
                         </label>
                       </div>
@@ -32,8 +32,8 @@
                     <div class="col-md-6 text-center">
                       <div class="form-check">
                         <input style="width:20px; height:20px;" type="radio" class="form-check-input" value="student"
-                          id="s" name="user" ngModel #ref1="ngModel" required>
-                        <label class="form-check-lable" for="s">
+                          id="y" name="user" ngModel #ref1="ngModel" required>
+                        <label class="form-check-lable" for="y">
                           <h4 style="padding-left: 20px;padding-top: 3px; ">STUDENT </h4>
                         </label>
                       </div>
@@ -57,6 +57,15 @@
                       <div class="text-danger"> *this field is mandatory </div>
                     </label>
                   </div>
+                  <div class="row mb-3">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 text-center">
+                      <a routerLink="/home/forgotpassword">Forgotpassword?</a>
+                    </div>
+                    <div class="col-md-2"></div>
+                    
+
+                  </div>
 
                   <!-- <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -73,15 +82,13 @@
               </div>
             </div>
           </div>
-
-
-
-        </form>
-
+</form>
+  <router-outlet></router-outlet>
       </div>
       <div cool-md-3></div>
     </div>
   </div>
+ 
 </body>
 
 

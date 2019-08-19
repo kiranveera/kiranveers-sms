@@ -1,16 +1,12 @@
+
 <div>
     <form >
         <div class="form-group">
-            <div class="row">
-            <div class="col-md-1">
-    <label>Search</label></div>
-    <div class="col-md-11">
-    <input  class="form-control" type="text" placeholder="search by student rollnumber" name="searchstudent" [(ngModel)]="search">    </div>
-</div>
-        </div>
+   <input  class="form-control" type="text" placeholder="search by student rollnumber" name="searchstudent" [(ngModel)]="search">    
+        </div>    
 </form>
 </div>
-
+<body>
 <div *ngIf=b4>
     <form #ref="ngForm" (ngSubmit)="onsubmit4(ref.value)">
         <div>
@@ -27,6 +23,16 @@
             <label>CLASS</label>
             <input type="text" name="class" class="form-control" [value]="objecttomodify4.class"
                 [(ngModel)]=objecttomodify4.class>
+        </div>
+        <div>
+            <label >GMAIL</label>
+            <input type="email" name="gmail" class="form-control" [value]="objecttomodify4.gmail"
+                [(ngModel)]=objecttomodify4.gmail>
+        </div>
+        <div>
+            <label>MOBILE NUMBER</label>
+            <input type="number" name="phnumber" class="form-control" [value]="objecttomodify4.phnumber"
+                [(ngModel)]=objecttomodify4.phnumber>
         </div>
 
         <div class="text-center"><button type="submit" class="btn btn-primary mt-3">save</button></div>
@@ -46,11 +52,12 @@
                 CLASS
             </th>
             <th>
-                TO DELETE
+               GMAIL
             </th>
             <th>
-                TO EDIT
+               MOBILE NUMBER
             </th>
+            
 
         </thead>
         <tr *ngFor="let obj of data | searchstudent:search">
@@ -64,12 +71,19 @@
                 {{obj.class}}
             </td>
             <td>
-                <button (click)="deletestudent(obj.studentname)"> <a> <img src="assets/delete.png"
-                            style="width:25px;"></a> </button>
+                {{obj.gmail}}
             </td>
             <td>
-                <button (click)="updateprofile(obj)"> <a> <img src="assets/edit.png" style="width:25px;"></a> </button>
+                {{obj.phnumber}}
             </td>
+            
+                <button (click)="deletestudent(obj.studentname)"> <a> <img src="assets/delete.png"
+                            style="width:25px;"></a> </button>
+            
+            
+                <button (click)="updateprofile(obj)"> <a> <img src="assets/edit.png" style="width:25px;"></a> </button>
+            
         </tr>
     </table>
 </div>
+</body>
