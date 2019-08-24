@@ -24,9 +24,9 @@ export class StudentprofilesComponent implements OnInit {
     })
   }
   // DELETE PROFILE
-  deletestudent(studentname) {
-    console.log(studentname)
-    this.http.delete(`/admin/delete/${studentname}`).subscribe(res => {
+  deletestudent(rollnumber) {
+    console.log(rollnumber)
+    this.http.delete(`/admin/delete/${rollnumber}`).subscribe(res => {
       alert(res['message']);
       this.data = res['data']
 

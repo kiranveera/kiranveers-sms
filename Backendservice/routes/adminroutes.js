@@ -52,11 +52,11 @@ adminroutes.put('/updateprofile', Authorization, (req, res, next) => {
 
 
 //delete student
-adminroutes.delete('/delete/:name', Authorization, (req, res, next) => {
+adminroutes.delete('/delete/:rollnumber', Authorization, (req, res, next) => {
     console.log(req.params);
     //delete student profile with name as " req .params.name"
     dbo = getDb();
-    dbo.collection("addstudentscollection").deleteOne({ name: { $eq: req.params.studentname } }, (err, success) => {
+    dbo.collection("addstudentscollection").deleteOne({ rollnumber: { $eq: req.params.rollnumber } }, (err, success) => {
         if (err) {
             next(err)
         }
@@ -102,7 +102,7 @@ adminroutes.post('/send', Authorization, (req, res, next) => {
         service: 'Gmail',
         auth: {
             user: 'veerakiran444@gmail.com',
-            pass: 'kiranveera0101',
+            pass: 'kiranveera@0101',
         },
     });
     let info = transporter.sendMail({
